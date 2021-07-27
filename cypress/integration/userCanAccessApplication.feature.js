@@ -26,12 +26,12 @@ describe('user that visits app', () => {
 
     describe('and the API is not working (500 error)', () => {
         before(() => {
-            cy.intercept('**/api/users', { statusCode: 500, body: { error: 'Bad Gateway' } })
+            cy.intercept('**/api/users', { statusCode: 500 })
             cy.visit('/')
         })
 
         it('is expected to return an error message', () => {
-            cy.get('[data-cy=message]').should('contain.text', 'Sorry, the API responds with: ${error.response.statusText}')
+            cy.get('[data-cy=message]').should('contain.text', 'Sorry, the API responds with Internal Server Error')
         })
 
     })

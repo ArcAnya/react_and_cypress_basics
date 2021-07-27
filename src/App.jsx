@@ -14,7 +14,7 @@ const App = () => {
       const response = await axios.get('https://reqres.in/api/users')
       setUsers(response.data.data)
     } catch (error) {
-      setMessage('Sorry, the API responds with: ${error.response.statusText}')
+      setMessage(`Sorry, the API responds with ${error.response.statusText}`)
       // Question: error.response.statusText does not seem to work
       // Debugger only works if developer tools open
     }
