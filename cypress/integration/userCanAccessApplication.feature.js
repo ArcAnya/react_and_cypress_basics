@@ -22,6 +22,13 @@ describe('user that visits app', () => {
                 .should('contain.text', 'Mirsad')
         })
 
+        it('is expected to show message when click button', () => {
+            cy.get('[data-cy=click-me]')
+                .first()
+                .click()
+            cy.get('[data-cy=message]').should('contain.text', 'You clicked on Thomas')
+        })
+
     })
 
     describe('and the API is not working (500 error)', () => {
