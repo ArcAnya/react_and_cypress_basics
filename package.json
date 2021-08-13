@@ -40,6 +40,8 @@
   },
   "devDependencies": {
     "cypress": "^8.0.0",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.1",
     "start-server-and-test": "^1.13.0"
   }
 }
